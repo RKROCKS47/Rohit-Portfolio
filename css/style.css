@@ -1569,3 +1569,44 @@ body.dark-mode #colorlib-aside .colorlib-footer ul li a{
 body.dark-mode #colorlib-aside .colorlib-footer ul li a:hover{
   color: #2c98f0 !important;
 }
+/* =========================
+   ✅ Mobile Offcanvas as Overlay Drawer (NO content shift)
+   Paste at END of css/style.css
+========================= */
+
+@media screen and (max-width: 768px) {
+
+  /* Sidebar should slide OVER the page */
+  #colorlib-aside {
+    z-index: 10001 !important;
+  }
+
+  /* Remove the "push page right" effect */
+  body.offcanvas #colorlib-main,
+  body.offcanvas .colorlib-nav-toggle {
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+    transform: none !important;
+  }
+
+  /* Dark backdrop when menu open */
+  body.offcanvas #colorlib-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 10000;
+  }
+
+  /* Make sure hamburger is above backdrop */
+  .colorlib-nav-toggle {
+    z-index: 10002 !important;
+  }
+
+  /* Prevent background scroll when menu open */
+  body.offcanvas {
+    overflow: hidden;
+  }
+}
