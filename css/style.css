@@ -1542,7 +1542,7 @@ body.dark-mode .project .desc{
   #colorlib-aside .colorlib-footer{
     position: static !important;
     margin-top: 16px !important;
-    padding-bottom: 22px !important;
+    padding-bottom: 24px !important;
   }
 
   /* icons should wrap neatly */
@@ -1552,7 +1552,7 @@ body.dark-mode .project .desc{
     justify-content: center !important;
     align-items: center !important;
     gap: 14px !important;
-    margin-top: 12px !important;
+    margin-top: 24px !important;
   }
   #colorlib-aside .colorlib-footer ul li{
     display: inline-flex !important;
