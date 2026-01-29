@@ -102,12 +102,12 @@
       }
     });
 
-    $(window).scroll(function () {
-      if ($('body').hasClass('offcanvas')) {
-        $('body').removeClass('offcanvas');
-        $('.js-colorlib-nav-toggle').removeClass('active');
-      }
-    });
+    // $(window).scroll(function () {
+    //   if ($('body').hasClass('offcanvas')) {
+    //     $('body').removeClass('offcanvas');
+    //     $('.js-colorlib-nav-toggle').removeClass('active');
+    //   }
+    // });
 
     // ✅ Extra: robust close when tapping outside (works with overlay/backdrop too)
     $(document).on('click', function (e) {
