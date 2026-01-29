@@ -1556,3 +1556,50 @@ body.dark-mode .project .desc{
     position: relative !important;
   }
 }
+/* =========================
+   ✅ Mobile sidebar footer overlap fix (Samsung/Android)
+   Paste at END of css/style.css
+========================= */
+
+@media (max-width: 768px){
+
+  /* 1) Sidebar should scroll naturally, not “fixed/absolute overlay” */
+  #colorlib-aside{
+    position: fixed;                 /* keep as drawer */
+    overflow-y: auto !important;     /* allow scroll inside menu */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 2) IMPORTANT: remove absolute footer behavior so it doesn't overlap menu */
+  #colorlib-aside .colorlib-footer{
+    position: static !important;     /* <- key fix */
+    margin-top: 18px !important;
+    padding-bottom: 18px !important;
+  }
+
+  /* 3) Make icons always wrap nicely */
+  #colorlib-aside .colorlib-footer ul{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 14px !important;
+    padding-left: 0 !important;
+    margin: 12px 0 0 0 !important;
+  }
+  #colorlib-aside .colorlib-footer ul li{
+    margin: 0 !important;
+    float: none !important;
+    display: inline-flex !important;
+  }
+  #colorlib-aside .colorlib-footer ul li a{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* 4) Add safe bottom spacing so last menu item never sits under footer */
+  #colorlib-main-menu{
+    padding-bottom: 90px !important; /* room for footer+icons */
+  }
+}
