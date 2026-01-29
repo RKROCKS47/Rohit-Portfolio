@@ -77,13 +77,19 @@ figure {
   padding-bottom: 40px;
   float: left;
   width: 300px;
+
   position: fixed;
-  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  height: 100dvh;              /* ✅ full height on mobile */
+  overflow-y: auto;            /* ✅ sidebar itself scrolls */
+  -webkit-overflow-scrolling: touch;
+
   z-index: 1001;
   background: #f2f3f7;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s; }
+  transition: 0.5s;
+}
+
   @media screen and (max-width: 768px) {
     #colorlib-aside {
       width: 300px;
@@ -343,7 +349,10 @@ figure {
               width: 100%; } }
 
 body.offcanvas {
-  overflow-x: hidden; }
+  overflow: hidden;            /* ✅ lock background */
+  height: 100%;
+}
+
   body.offcanvas #colorlib-aside {
     -moz-transform: translateX(0);
     -webkit-transform: translateX(0);
@@ -1592,13 +1601,14 @@ body.dark-mode #colorlib-aside .colorlib-footer ul li a:hover{
   }
 
   /* Dark backdrop when menu open */
-  body.offcanvas #colorlib-page::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: 10000;
-  }
+ body.offcanvas #colorlib-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1000;               /* ✅ below sidebar (1001) */
+}
+
 
   /* Make sure hamburger is above backdrop */
   .colorlib-nav-toggle {
