@@ -1620,3 +1620,6 @@ body.dark-mode #colorlib-aside .colorlib-footer ul li a:hover{
     overflow: hidden;
   }
 }
+.hero-sub{ color: rgba(0,0,0,0.7); margin: 10px 0 18px; }
+.hero-cta .btn{ margin-right: 10px; }
+body.dark-mode .hero-sub{ color: rgba(233,238,245,0.75); }
