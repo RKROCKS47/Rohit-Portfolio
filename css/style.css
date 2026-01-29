@@ -1516,90 +1516,56 @@ body.dark-mode .project .desc{
   }
 }
 /* =========================
-   ✅ Samsung/Android scroll glitch fix (footer icons merge)
-   Paste at END of css/style.css
-========================= */
-
-/* Prevent repaint glitch caused by transform while scrolling */
-@media (max-width: 768px){
-  #colorlib-aside{
-    -webkit-transform: none !important;
-    transform: none !important;
-    will-change: auto !important;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-
-  /* Make footer icons stable layout */
-  #colorlib-aside .colorlib-footer ul{
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 12px !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding-left: 0 !important;
-    margin: 10px 0 0 0 !important;
-  }
-  #colorlib-aside .colorlib-footer ul li{
-    margin: 0 !important;
-    float: none !important;
-    display: inline-flex !important;
-  }
-  #colorlib-aside .colorlib-footer ul li a{
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-}
-@media (max-width: 768px){
-  #colorlib-aside{
-    position: relative !important;
-  }
-}
-/* =========================
-   ✅ Mobile sidebar footer overlap fix (Samsung/Android)
-   Paste at END of css/style.css
+   ✅ FINAL FIX: mobile footer overlap + icons wrap + correct icon color
+   (Paste at END of css/style.css)
 ========================= */
 
 @media (max-width: 768px){
 
-  /* 1) Sidebar should scroll naturally, not “fixed/absolute overlay” */
+  /* keep sidebar as drawer and let it scroll */
   #colorlib-aside{
-    position: fixed;                 /* keep as drawer */
-    overflow-y: auto !important;     /* allow scroll inside menu */
+    position: fixed !important;
+    overflow-y: auto !important;
     -webkit-overflow-scrolling: touch;
   }
 
-  /* 2) IMPORTANT: remove absolute footer behavior so it doesn't overlap menu */
+  /* footer should NOT overlap menu */
   #colorlib-aside .colorlib-footer{
-    position: static !important;     /* <- key fix */
-    margin-top: 18px !important;
-    padding-bottom: 18px !important;
+    position: static !important;
+    margin-top: 16px !important;
+    padding-bottom: 22px !important;
   }
 
-  /* 3) Make icons always wrap nicely */
+  /* icons should wrap neatly */
   #colorlib-aside .colorlib-footer ul{
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 14px !important;
-    padding-left: 0 !important;
-    margin: 12px 0 0 0 !important;
+    margin-top: 12px !important;
   }
   #colorlib-aside .colorlib-footer ul li{
-    margin: 0 !important;
-    float: none !important;
     display: inline-flex !important;
-  }
-  #colorlib-aside .colorlib-footer ul li a{
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
   }
 
-  /* 4) Add safe bottom spacing so last menu item never sits under footer */
-  #colorlib-main-menu{
-    padding-bottom: 90px !important; /* room for footer+icons */
+  /* ensure last menu item never goes under footer */
+  #colorlib-aside #colorlib-main-menu{
+    padding-bottom: 110px !important;
   }
+}
+
+/* FIX: your original footer icon color is white-ish (bad on light sidebar).
+   Force proper colors for both themes. */
+#colorlib-aside .colorlib-footer ul li a{
+  color: rgba(0,0,0,0.55) !important;
+}
+#colorlib-aside .colorlib-footer ul li a:hover{
+  color: #2c98f0 !important;
+}
+body.dark-mode #colorlib-aside .colorlib-footer ul li a{
+  color: rgba(233,238,245,0.75) !important;
+}
+body.dark-mode #colorlib-aside .colorlib-footer ul li a:hover{
+  color: #2c98f0 !important;
 }
