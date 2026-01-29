@@ -1427,3 +1427,91 @@ body.offcanvas {
 
 .js .animate-box {
   opacity: 0; }
+/* =========================
+   ✅ Dark Mode + Mobile Icon Fix
+   Paste at END of css/style.css
+========================= */
+
+.theme-toggle-wrap{
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+.theme-toggle{
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+  color: #222;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.theme-toggle:active{ transform: scale(0.98); }
+
+body.dark-mode{
+  background: #0f1115;
+  color: #e9eef5;
+}
+body.dark-mode #colorlib-main{
+  background: #0f1115;
+}
+body.dark-mode #colorlib-aside{
+  background: #11141a;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+body.dark-mode #colorlib-aside,
+body.dark-mode #colorlib-aside a{
+  color: #e9eef5 !important;
+}
+body.dark-mode .theme-toggle{
+  background: #171b23;
+  color: #e9eef5;
+  border-color: rgba(255,255,255,0.14);
+}
+body.dark-mode .services,
+body.dark-mode .timeline-label,
+body.dark-mode .panel,
+body.dark-mode .hire{
+  background: #141824 !important;
+  color: #e9eef5 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+body.dark-mode input,
+body.dark-mode textarea{
+  background: #11141a !important;
+  color: #e9eef5 !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder{
+  color: rgba(233,238,245,0.65) !important;
+}
+body.dark-mode .project .desc{
+  background: rgba(15,17,21,0.72) !important;
+}
+
+/* ✅ Fix: footer icons merging / glitch on mobile */
+@media (max-width: 768px){
+  #colorlib-aside .colorlib-footer ul{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-left: 0 !important;
+    margin: 10px 0 0 0 !important;
+  }
+  #colorlib-aside .colorlib-footer ul li{
+    margin: 0 !important;
+    float: none !important;
+    display: inline-flex !important;
+  }
+  #colorlib-aside .colorlib-footer ul li a{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
