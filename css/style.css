@@ -1507,7 +1507,7 @@ body.dark-mode .project .desc{
   #colorlib-aside .colorlib-footer ul{
     display: flex !important;
     flex-wrap: wrap !important;
-    gap: 12px !important;
+    gap: 9px !important;
     justify-content: center !important;
     align-items: center !important;
     padding-left: 0 !important;
@@ -1542,7 +1542,7 @@ body.dark-mode .project .desc{
   #colorlib-aside .colorlib-footer{
     position: static !important;
     margin-top: 16px !important;
-    padding-bottom: 24px !important;
+    padding-bottom: 20px !important;
   }
 
   /* icons should wrap neatly */
@@ -1552,7 +1552,7 @@ body.dark-mode .project .desc{
     justify-content: center !important;
     align-items: center !important;
     gap: 14px !important;
-    margin-top: 24px !important;
+    margin-top: 20px !important;
   }
   #colorlib-aside .colorlib-footer ul li{
     display: inline-flex !important;
