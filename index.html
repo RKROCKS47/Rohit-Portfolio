@@ -114,9 +114,9 @@
   Built 3 production-style projects: Food Ordering, Business Website, ML Healthcare System.
 </p>
 <p class="hero-cta">
-  <a class="btn btn-primary btn-learn" href="#" data-nav-section="work">View Projects</a>
+  <a class="btn btn-primary btn-learn" href="#work" data-nav-section="work">View Projects</a>
   <a class="btn btn-primary btn-learn" href="Rohit-Ingale-Resume.pdf" download>Download Resume <i class="icon-download4"></i></a>
-  <a class="btn btn-primary btn-learn" href="#" data-nav-section="contact">Contact</a>
+  <a class="btn btn-primary btn-learn" href="#contact" data-nav-section="contact">Contact</a>
 </p>
 
                             <!-- <p>
@@ -719,23 +719,31 @@
                   <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
                       <!-- Simple mailto form (works without backend) -->
-                      <form action="mailto:Rohitingale586@gmail.com" method="post" enctype="text/plain">
-                        <div class="form-group">
-                          <input type="text" class="form-control" name="Name" placeholder="Name" required>
-                        </div>
-                        <div class="form-group">
-                          <input type="email" class="form-control" name="Email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                          <input type="text" class="form-control" name="Subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                          <textarea id="message" cols="30" rows="7" class="form-control" name="Message" placeholder="Message" required></textarea>
-                        </div>
-                        <div class="form-group">
-                          <input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
-                        </div>
-                      </form>
+                      <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="ff0e461f-a740-48eb-ad8b-d4231986f920">
+  <input type="hidden" name="subject" value="New message from Rohit Portfolio">
+  <input type="hidden" name="from_name" value="Rohit Portfolio">
+  <div class="form-group">
+    <input type="text" class="form-control" name="name" placeholder="Name" required>
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" name="email" placeholder="Email" required>
+  </div>
+  <div class="form-group">
+    <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-send-message">Send Message</button>
+  </div>
+        <input type="hidden" name="redirect" value="https://rkrocks47.github.io/Rohit-Portfolio/?success=true">
+<script>
+  if (new URLSearchParams(window.location.search).get("success")) {
+    alert("Message sent successfully!");
+  }
+</script>
+
+</form>
+
                     </div>
                   </div>
                 </div>
