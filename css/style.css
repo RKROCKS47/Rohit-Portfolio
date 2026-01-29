@@ -1515,3 +1515,44 @@ body.dark-mode .project .desc{
     justify-content: center !important;
   }
 }
+/* =========================
+   ✅ Samsung/Android scroll glitch fix (footer icons merge)
+   Paste at END of css/style.css
+========================= */
+
+/* Prevent repaint glitch caused by transform while scrolling */
+@media (max-width: 768px){
+  #colorlib-aside{
+    -webkit-transform: none !important;
+    transform: none !important;
+    will-change: auto !important;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Make footer icons stable layout */
+  #colorlib-aside .colorlib-footer ul{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-left: 0 !important;
+    margin: 10px 0 0 0 !important;
+  }
+  #colorlib-aside .colorlib-footer ul li{
+    margin: 0 !important;
+    float: none !important;
+    display: inline-flex !important;
+  }
+  #colorlib-aside .colorlib-footer ul li a{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+@media (max-width: 768px){
+  #colorlib-aside{
+    position: relative !important;
+  }
+}
