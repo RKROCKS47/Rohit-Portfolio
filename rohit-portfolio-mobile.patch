@@ -1,0 +1,50 @@
+From a21ed0a48d1044fc026e77e11e6a8f67b9e27cd0 Mon Sep 17 00:00:00 2001
+From: t <t@t>
+Date: Wed, 7 Oct 2026 17:46:05 +0000
+Subject: [PATCH] mobile drawer footer fix
+
+---
+ css/style.css | 30 ++++++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
+
+diff --git a/css/style.css b/css/style.css
+index 39343f9..a154cc0 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -1631,3 +1631,33 @@ body.dark-mode .hero-sub{ color: rgba(233,238,245,0.75); }
+ @media(max-width:768px){ .proof-grid{ grid-template-columns:repeat(2,1fr); } }
+ body.dark-mode .proof-strip{ background:#0f1115; }
+ body.dark-mode .proof-grid span{ color: rgba(233,238,245,0.7); }
++
++/* ---- Mobile drawer: keep footer below the nav, never overlapping ----
++   The drawer height was set by JS in px (goes stale when the mobile URL
++   bar shows/hides) and every property transitioned, which glitches fixed
++   scroll containers on phones. Use dynamic viewport units + flexbox. */
++@media (max-width: 768px) {
++  #colorlib-aside {
++    display: flex !important;
++    flex-direction: column !important;
++    height: 100dvh !important;
++    max-height: 100dvh !important;
++    overflow-y: auto !important;
++    -webkit-overflow-scrolling: touch;
++    transition: transform 0.5s !important;
++  }
++  #colorlib-aside .text-center,
++  #colorlib-aside #colorlib-main-menu {
++    flex-shrink: 0 !important;
++  }
++  #colorlib-aside #colorlib-main-menu {
++    padding-bottom: 0 !important;
++  }
++  #colorlib-aside .colorlib-footer {
++    position: static !important;
++    margin-top: auto !important;
++    padding-top: 16px !important;
++    padding-bottom: 28px !important;
++    flex-shrink: 0 !important;
++  }
++}
+-- 
+2.43.0
+

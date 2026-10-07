@@ -1631,3 +1631,33 @@ body.dark-mode .hero-sub{ color: rgba(233,238,245,0.75); }
 @media(max-width:768px){ .proof-grid{ grid-template-columns:repeat(2,1fr); } }
 body.dark-mode .proof-strip{ background:#0f1115; }
 body.dark-mode .proof-grid span{ color: rgba(233,238,245,0.7); }
+
+/* ---- Mobile drawer: keep footer below the nav, never overlapping ----
+   The drawer height was set by JS in px (goes stale when the mobile URL
+   bar shows/hides) and every property transitioned, which glitches fixed
+   scroll containers on phones. Use dynamic viewport units + flexbox. */
+@media (max-width: 768px) {
+  #colorlib-aside {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    transition: transform 0.5s !important;
+  }
+  #colorlib-aside .text-center,
+  #colorlib-aside #colorlib-main-menu {
+    flex-shrink: 0 !important;
+  }
+  #colorlib-aside #colorlib-main-menu {
+    padding-bottom: 0 !important;
+  }
+  #colorlib-aside .colorlib-footer {
+    position: static !important;
+    margin-top: auto !important;
+    padding-top: 16px !important;
+    padding-bottom: 28px !important;
+    flex-shrink: 0 !important;
+  }
+}
