@@ -1,0 +1,25 @@
+From 5f052dc0899ae7dade2b486ccb7a50abe8d842b5 Mon Sep 17 00:00:00 2001
+From: t <t@t>
+Date: Wed, 7 Oct 2026 17:28:08 +0000
+Subject: [PATCH] fix stray div
+
+---
+ index.html | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/index.html b/index.html
+index 6bab250..71f7579 100644
+--- a/index.html
++++ b/index.html
+@@ -361,8 +361,6 @@
+                   </div>
+                 </div>
+ 
+-                </div>
+-
+               </div>
+             </div>
+           </section>
+-- 
+2.43.0
+
